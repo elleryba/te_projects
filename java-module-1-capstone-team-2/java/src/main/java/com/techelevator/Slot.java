@@ -1,11 +1,14 @@
 package com.techelevator;
 
+import java.text.NumberFormat;
+
 public class Slot {
-	
+
 	private VendingMachineItem slotItem;
 	private double price;
 	private int quantity;
-	
+	private NumberFormat formatter = NumberFormat.getCurrencyInstance();
+
 	public Slot(VendingMachineItem slotItem, double price, int quantity) {
 		this.slotItem = slotItem;
 		this.price = price;
@@ -14,7 +17,7 @@ public class Slot {
 
 	@Override
 	public String toString() {
-		return slotItem + " | Price $" + price + " | Quantity available: " + quantity;
+		return slotItem + " | Price " + formatter.format(price) + " | Quantity available: " + quantity;
 	}
 
 	/**
@@ -58,7 +61,5 @@ public class Slot {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	
-	
 
 }

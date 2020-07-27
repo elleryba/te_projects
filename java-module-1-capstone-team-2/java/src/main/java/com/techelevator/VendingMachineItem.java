@@ -10,12 +10,10 @@ public class VendingMachineItem {
 		this.type = type;
 	}
 
-
 	@Override
 	public String toString() {
 		return type + " | " + name;
-		}
-
+	}
 
 	/**
 	 * @return the name
@@ -44,7 +42,5 @@ public class VendingMachineItem {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
-	
 
 }
