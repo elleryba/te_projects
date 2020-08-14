@@ -73,10 +73,14 @@ h3 {
 ul li {
   margin: 7px;
   list-style: none;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  padding: 10px;
+  border-radius: 5px;
+  width: 40%;
 }
 nav ul li {
   list-style: none;
-  background-color: rgb(78, 171, 246);
+  background-color: rgb(0, 0, 0);
   line-height: 20px;
   width: 10%;
   border-radius: 5px;
@@ -89,10 +93,10 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: rgb(255, 255, 255);
+  color: rgb(238, 75, 151);
 }
 a:visited {
-  color: rgb(162, 58, 247);
+  color: rgb(255, 255, 255);
 }
 p {
   font-size: 14px;
@@ -115,4 +119,12 @@ p {
     max-width: 20%;
     max-height: auto;
   }
+  h3 {
+    font-size: 32px;
+    margin-top: 0.15em;
+    margin-bottom: 0.15em;
+    color: black;
+    border-bottom: solid 1px black;
+}
+  
 </style>

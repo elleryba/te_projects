@@ -6,7 +6,7 @@
     />
     <form class="form-signin" @submit.prevent="login">
       <h1 class="heading">BREWERY FINDER</h1>
-      <h3 class="h3 mb-3 font-weight-normal">find your beer and drink it too!</h3>
+      <h3 class="h3 mb-3 font-weight-normal">Find your beer and drink it too!</h3>
       <div
         class="alert alert-danger"
         role="alert"
@@ -88,7 +88,7 @@ export default {
   
 }
 button{
-  background-color: rgb(78, 171, 246);
+  background-color: black;
   line-height: 20px;
   width: 10%;
   border-radius: 5px;
@@ -96,5 +96,6 @@ button{
   text-decoration: none;
   text-align: center;
   margin: 10px;
+  color: white;
 }
 </style>

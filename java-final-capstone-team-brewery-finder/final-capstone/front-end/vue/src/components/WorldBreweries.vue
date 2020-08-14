@@ -5,6 +5,9 @@
       rel="stylesheet"
     />
     <h3>World Breweries</h3>
+    <div class="loading" v-if="isLoading">
+        <img src="/public/loadingbeer.gif" />
+      </div>
     <p>Click a brewery to view details</p>
     <ul>
       <li
@@ -23,7 +26,7 @@
           <p>Longitude: {{ brewery.longitude }}</p>
           <p>Latitude: {{ brewery.latitude }}</p>
           <p>Phone: {{ brewery.phone }}</p>
-          <p>Website: {{ brewery.website_url }}</p>
+          <p>Website: <router-link :to= brewery.website_url >{{ brewery.website_url }}</router-link></p>
           <p>Last Updated: {{ brewery.updated_at }}</p>
         </div>
       </li>
@@ -66,18 +69,36 @@ export default {
       pages: [],
       showDetails: false,
       showPagination: true,
+      isLoading: true,
     }; //end of return
   }, // end of data
 
   created() {
     this.getWorldBreweries();
+    this.isLoading = false;
   },
 
   methods: {
     getWorldBreweries() {
       worldBreweryService.getListOfWorldBreweries().then((response) => {
         this.$store.commit("SET_BREWS", response.data);
-      });
+        this.isLoading = false;
+      })
+      .catch(error => {
+          if (error.response) {
+            this.errorMsg =
+              "Error retrieving breweries. Response received was '" +
+              error.response.statusText +
+              "'.";
+          } else if (error.request) {
+            this.errorMsg =
+              "Error retrieving breweries. Server could not be reached.";
+          } else {
+            this.errorMsg =
+              "Error retrieving breweries. Request could not be created.";
+          }
+          this.isLoading = false;
+        });
     },
     setPages() {
       let numberOfPages = Math.ceil(this.breweries.length / this.perPage);

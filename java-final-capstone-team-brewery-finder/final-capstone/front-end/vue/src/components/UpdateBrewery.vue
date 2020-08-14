@@ -105,7 +105,7 @@ export default {
   clear: both;
 }
 .navbtn {
-  background-color: rgb(78, 171, 246);
+  background-color:black;
   line-height: 20px;
   width: 10%;
   border-radius: 5px;
@@ -113,6 +113,7 @@ export default {
   text-decoration: none;
   text-align: center;
   margin: 10px;
+  color: white;
 }
 
 </style>

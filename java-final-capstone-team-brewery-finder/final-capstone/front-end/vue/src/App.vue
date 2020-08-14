@@ -1,7 +1,7 @@
 <template>
   
 
-  <div id="app">
+  <div id="app" >
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <div id="nav">
       <nav>
@@ -23,7 +23,7 @@ li {
 
 nav ul li {
     list-style: none;
-    background-color: rgb(78, 171, 246);
+    background-color: rgb(0, 0, 0);
     line-height: 30px;
     width: 10%;
     border-radius: 5px;
@@ -39,7 +39,7 @@ a:hover{
   color: rgb(255, 255, 255);
 }
 a:visited{
-  color:rgb(162, 58, 247);
+  color:rgb(255, 255, 255);
 }
   nav {
     display:flex;
@@ -56,8 +56,10 @@ a:visited{
 #app{
   background: url("../public/foamgif.gif");
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-color:gray;
+  background-size:cover;
+  background-position: center;
+  background-attachment: fixed;
+  
 }
 
 

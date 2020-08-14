@@ -107,7 +107,7 @@ export default {
     font-family: "Open Sans", sans-serif;
 }
 button{
-  background-color: rgb(78, 171, 246);
+  background-color: rgb(0, 0, 0);
   line-height: 20px;
   width: 10%;
   border-radius: 5px;
@@ -115,5 +115,6 @@ button{
   text-decoration: none;
   text-align: center;
   margin: 10px;
+  color:white;
 }
 </style>

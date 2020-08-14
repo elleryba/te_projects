@@ -9,8 +9,10 @@
         v-bind:key="review.review" 
       >Review: {{ review.review }} | Rating: {{review.rating}}
         </li>
+
   </ul>
   <nav>
+    <!--<li><router-link :to="{ name: 'beerList', params: {name: this.$route.params.name}}">Beer List</router-link></li>-->
   </nav>
   </div>
 </template>
@@ -56,5 +58,23 @@ h3 {
 }
 li{
   list-style: none;
+}
+nav li {
+  list-style: none;
+  background-color: rgb(0, 0, 0);
+  line-height: 20px;
+  width: 10%;
+  border-radius: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  margin: 10px;
+  color: white;
+}
+ul li{
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  padding: 10px;
+  border-radius: 5px;
+  width: 40%;
 }
 </style>
