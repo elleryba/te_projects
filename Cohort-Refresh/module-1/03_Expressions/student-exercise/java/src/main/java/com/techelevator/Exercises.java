@@ -10,7 +10,7 @@ public class Exercises {
 	 sleepIn(false, true) → true
 	 */
 	public boolean sleepIn(boolean weekday, boolean vacation) {
-		return false;
+		return !weekday || vacation;
 	}
 
 	/*
