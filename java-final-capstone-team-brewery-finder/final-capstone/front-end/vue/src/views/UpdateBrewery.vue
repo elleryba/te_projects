@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Update Brewery</h1>
     <update-brewery />
   </div>
 </template>

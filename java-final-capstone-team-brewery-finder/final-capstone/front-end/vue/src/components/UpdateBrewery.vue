@@ -1,6 +1,6 @@
 <template><!--didnt add anything other than a div so it would not have red squiggles-->
    <div class="update-brewery">
-
+<h1 class="headline">Update Brewery</h1>
        <form v-on:submit.prevent="updateBrewery">
        <!--start of form elements -->
        <div class="form-element">
@@ -105,15 +105,31 @@ export default {
   clear: both;
 }
 .navbtn {
-  background-color:black;
+grid-area: nav;
+}
+button{
+    grid-area: back;
+  background-color: rgb(74, 178, 226);
   line-height: 20px;
-  width: 10%;
   border-radius: 5px;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  margin: 10px;
+  margin: auto;
   color: white;
+  cursor: pointer;
+  align-items: center;
+}
+.update-brewery {
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  grid-gap: 20px 50px;
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+  grid-template-areas:
+    ". headline headline ."
+    ". body body ."
+    ". nav nav .";
+  align-items: center;
 }
 
 </style>

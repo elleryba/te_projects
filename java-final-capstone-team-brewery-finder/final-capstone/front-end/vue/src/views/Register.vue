@@ -9,7 +9,8 @@
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
-      <label for="username" class="sr-only">Username</label>
+      <div class="username">
+      <label for="username" class="sr-only">Username </label>
       <input
         type="text"
         id="username"
@@ -18,8 +19,9 @@
         v-model="user.username"
         required
         autofocus
-      />
-      <label for="password" class="sr-only">Password</label>
+      /></div>
+      <div class="password">
+      <label for="password" class="sr-only">Password </label>
       <input
         type="password"
         id="password"
@@ -35,19 +37,19 @@
         placeholder="Confirm Password"
         v-model="user.confirmPassword"
         required
-      />
+      /></div>
        <div class="form-element">
-        <label for="role">Role:</label>
+        <label for="role">Role: </label>
         <select id="role" v-model="user.role">
           <option value="brewer">Brewer</option>
           <option value="beerlover">Beer Lover</option>
           <option value="admin">Admin</option>
         </select>
       </div>
-      <router-link :to="{ name: 'login' }">Have an account?</router-link>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         Create Account
-      </button>
+      </button><br>
+      <router-link :to="{ name: 'login' }">Have an account?</router-link>
     </form>
   </div>
 </template>
@@ -107,7 +109,7 @@ export default {
     font-family: "Open Sans", sans-serif;
 }
 button{
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(74, 178, 226);
   line-height: 20px;
   width: 10%;
   border-radius: 5px;
@@ -116,5 +118,9 @@ button{
   text-align: center;
   margin: 10px;
   color:white;
+}
+#register{
+  align-items: center;
+  text-align: center;
 }
 </style>

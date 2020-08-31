@@ -4,11 +4,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Shadows+Into+Light&display=swap"
       rel="stylesheet"
     />
-    <h3 id="headline">Breweries</h3>
-   <div class="loading" v-if="isLoading">
-      <img src="/public/loadingbeer.gif" />
-    </div>
-    <p id="tagline">Click a brewery to view details</p>
+    <h1 class="headline">Brewery List</h1>
     <ul id="body">
       <li
         class="list-o-breweries"
@@ -16,7 +12,9 @@
         v-bind:key="brewery.breweryName"
         v-on:click="showDetails = !showDetails"
       >
+      <div class="brewname">
         {{ brewery.name }}
+        </div>
         <div class="brewery-details" v-show="showDetails">
           <p>Description: {{ brewery.history }}</p>
           <p>Opens at: {{ brewery.openFrom }}</p>
@@ -32,7 +30,7 @@
         </div>
       </li>
     </ul>
-    <div>
+    <div id="nav">
       <nav>
         <ul>
           <li>
@@ -46,7 +44,7 @@
             <router-link :to="{ name: 'deletebeer'}">Delete A Beer</router-link>
           </li>
           <li>
-            <router-link :to="{ name: 'worldbreweries'}">View World Breweries</router-link>
+            <router-link :to="{ name: 'worldbreweries'}">World Breweries</router-link>
           </li>
         </ul>
       </nav>
@@ -112,95 +110,94 @@ li {
   list-style: none;
 }
 nav ul li {
-  display: flex;
-  justify-content: center;
   list-style: none;
-  background-color: rgb(0, 0, 0);
-  line-height: 20px;
-  width: 10%;
+  background-color: rgb(74, 178, 226);
+  line-height: 30px;
   border-radius: 5px;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
+  align-items: center;
   margin: 10px;
-  color: white;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  padding: 10px;
 }
 a {
   text-decoration: none;
+  color: white;
 }
 a:hover {
-  color: rgb(238, 75, 161);
+  color: white;
+  text-decoration: underline;
 }
 a:visited {
   color: white;
 }
 nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
+  font-family: "Open Sans", sans-serif;
+  background-color: rgb(74, 178, 226);
 }
 nav ul {
   display: flex;
+  justify-content: left;
+  align-items: center;
   margin: 0px;
   padding: 0px;
 }
 .brewery-list {
   font-family: "Open Sans", sans-serif;
-}
-h3 {
-  text-decoration: underline;
+  align-items: center;
 }
 .viewbeers {
   display: flex;
-  flex-direction: column;
   list-style: none;
-  background-color: black;
+  background-color: rgb(74, 178, 226);
   line-height: 20px;
-  width: 40%;
   border-radius: 5px;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  justify-content: center;
-  margin: 10px;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
   color: white;
+  max-width: 30%;
+  cursor: pointer;
 }
 .brewery-details {
-  font-size: 12px;
+  font-size: 13px;
+  color: black;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+  cursor: default;
 }
 p {
   font-size: 14px;
 }
 ul li {
   margin: 7px;
+  align-items: center;
+  text-align: center;
 }
 #main-grid {
   display: grid;
   grid-gap: 20px 50px;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
   grid-template-areas:
-    "headline"
-    "tagline"
-    "body";
+  ". headline headline ."
+    ". body body ."
+    ". . . ."
+    "nav nav nav nav";
   align-items: center;
-}
-#headline {
-  grid-area: headline;
-}
-h3#headline {
-  font-size: 32px;
-  margin-top: 0.15em;
-  margin-bottom: 0.15em;
-  color: black;
-  border-bottom: solid 1px black;
-}
-#tagline {
-  grid-area: tagline;
 }
 #body {
   grid-area: body;
+  align-items: center;
+}
+#nav{
+  grid-area: nav;
 }
 .list-o-breweries {
   color: #f7fafc;
@@ -209,9 +206,22 @@ h3#headline {
   flex: 1;
   margin: 10px;
   text-align: center;
-  cursor: crosshair;
-  width: 30%;
+  align-items: center;
+  cursor: pointer;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   padding: 10px;
+  background-color: white;
+}
+ul{
+  align-items: center;
+}
+.brewname{
+  color: black;
+  font-weight: bold;
+}
+h1.headline{
+  grid-area: headline;
+  align-items: center;
+  text-align: center;
 }
 </style>

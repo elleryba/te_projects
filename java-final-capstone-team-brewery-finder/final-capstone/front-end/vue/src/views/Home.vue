@@ -3,7 +3,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Shadows+Into+Light&display=swap"
       rel="stylesheet"/>
-    <h1>Brewery Finder</h1>
+    
     <brewery-list />
   </div>
 </template>
@@ -22,6 +22,7 @@ export default {
 <style scoped>
 h1 {
   font-family: "Shadows Into Light", cursive;
+  text-align: center;
 }
 p {
   font-family: "Open Sans", sans-serif;

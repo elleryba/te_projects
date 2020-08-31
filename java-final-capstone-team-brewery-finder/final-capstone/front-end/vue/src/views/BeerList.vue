@@ -1,8 +1,6 @@
 <template>
   <div>
-      
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Shadows+Into+Light&display=swap" rel="stylesheet">
-    <h1>Beer List</h1>
     <beer-list />
   </div>
 </template>
@@ -17,8 +15,13 @@ export default {
 };
 </script>
 
-<style>
-h1{
-  font-family: 'Shadows Into Light', cursive;
+<style scoped>
+h1 {
+  font-family: "Shadows Into Light", cursive;
+  text-align: center;
+}
+p {
+  font-family: "Open Sans", sans-serif;
+  font-size: 12px;
 }
 </style>

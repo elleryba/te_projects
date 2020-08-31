@@ -38,6 +38,8 @@ public class VendingMachine {
 			Slot aSlot = new Slot(anItem, Double.parseDouble(inventoryData[2]), 5);
 			inventory.put(inventoryData[0], aSlot);
 		}
+		
+		inputFile.close();
 
 	}
 
@@ -65,7 +67,7 @@ public class VendingMachine {
 		double userMoney = Double.parseDouble(moneyToDeposit);
 
 		if (userMoney != 1.0 && userMoney != 2.0 && userMoney != 5.0 && userMoney != 10.0) {
-			System.out.println("Invalid entry");
+			System.out.println("Invalid entry - There is no " + formatter.format(userMoney) + " bill!");
 		}
 
 		else {
@@ -74,6 +76,7 @@ public class VendingMachine {
 
 			recordAuditLine("FEED MONEY:", formatter.format(userMoney));// records a line with a transaction
 		}
+		
 	}
 
 	public void dispenseItem() throws IOException {
