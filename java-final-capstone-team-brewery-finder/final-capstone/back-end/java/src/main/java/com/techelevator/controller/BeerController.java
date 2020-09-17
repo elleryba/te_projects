@@ -13,13 +13,12 @@ import com.techelevator.dao.BeerDAO;
 import com.techelevator.model.Beer;
 import com.techelevator.model.BeerDTO;
 
-
-@RestController
 @CrossOrigin
+@RestController
+
 public class BeerController {
 
 private BeerDAO beerDAO;
-	// Comment to push
 	public BeerController(BeerDAO beerDAO) {
 		this.beerDAO = beerDAO;
 	}

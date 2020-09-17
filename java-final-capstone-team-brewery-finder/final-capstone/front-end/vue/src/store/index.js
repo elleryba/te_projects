@@ -27,7 +27,7 @@ export default new Vuex.Store({
     reviewDtos: [],
 
     activeBrewery:{
-      brewery_name: "",
+      name: "",
       history: "",
       open_from: "",
       open_to: "",
@@ -48,19 +48,13 @@ export default new Vuex.Store({
     SET_BREWS(state, data){
       state.breweries = data;
     },
-    ADD_BREWERY(state, data){ // added and called by CreateBrewery and UpdateBrewery
-     // state.activeBrewery = data; originally had this 
-     state.breweries.push(data); // changed to this but not sure if right
-     //unshift will add the new object to the beginning of the array
-     //looks good!  
+    ADD_BREWERY(state, data){
+     state.breweries.push(data);
     },
     UPDATE_BREW(state, data){
       let brewToUpdate = state.breweries.find(x => x.id === data.id)
-    
       if(brewToUpdate){
-      
         brewToUpdate = data;
-        
       }
     },
     ADD_BEER(state, data){
@@ -78,7 +72,9 @@ export default new Vuex.Store({
     ADD_REVIEW(state, data){
       state.reviews.push(data);
     },
-    
+    SET_ACTIVE_BREWERY(state, data){
+      state.activeBrewery = data;
+    },
     LOGOUT(state) {
       localStorage.removeItem('token');
       localStorage.removeItem('user');

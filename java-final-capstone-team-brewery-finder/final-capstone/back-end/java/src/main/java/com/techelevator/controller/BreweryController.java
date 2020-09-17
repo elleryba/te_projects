@@ -1,9 +1,7 @@
 package com.techelevator.controller;
 
-import java.security.Principal;
 import java.util.List;
 
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +13,6 @@ import com.techelevator.dao.BreweryDAO;
 import com.techelevator.model.Brewery;
 import com.techelevator.model.BreweryDTO;
 @CrossOrigin
-
 @RestController
 
 public class BreweryController {
@@ -37,9 +34,9 @@ public class BreweryController {
 			
 	}
 	
-	@RequestMapping(value = "/get", method = RequestMethod.GET)
-	public Brewery getBrewery(@RequestBody String brewery_name) {
-		return breweryDAO.getBreweryByName(brewery_name);
+	@RequestMapping(value = "/get/{name}", method = RequestMethod.GET)
+	public Brewery getBrewery(@RequestBody @PathVariable String name) {
+		return breweryDAO.getBreweryByName(name);
 	}
 	
 	@RequestMapping(value = "/update/{id}/{name}", method = RequestMethod.PUT)

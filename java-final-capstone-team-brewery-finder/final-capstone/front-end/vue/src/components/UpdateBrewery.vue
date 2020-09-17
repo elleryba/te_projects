@@ -45,6 +45,15 @@ export default {
   props: ["id"],
   data() {
     return {
+      activeBrewery:{
+      id: "",
+      name: "",
+      history: "",
+      openFrom: "",
+      openTo: "",
+      daysOpen: "",
+      address: "",
+      },
       name: this.$route.params.name,
       history: "",
       openFrom: "",
@@ -81,14 +90,21 @@ export default {
           }
         });
     },
+    getBrewery(){
+      breweryService.getBreweryByName(this.$route.params.name)
+      .then((response) => {
+        this.$store.commit("SET_ACTIVE_BREWERY", response.data);
+        this.activeBrewery = response.data;
+      })
+    },
     resetForm() {
       this.newReview = {}; // reset brewery object to empty
       this.$router.push({ name: "home" }); //return user to homepage
     },
   },
-  //created() {
-    //breweryService.getBreweryByName(this.name);
-  //},
+  created() {
+    this.getBrewery();
+  },
 };
 </script>
 <style scoped>

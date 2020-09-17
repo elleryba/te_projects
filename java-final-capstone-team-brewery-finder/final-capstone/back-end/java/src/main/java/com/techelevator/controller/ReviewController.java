@@ -13,8 +13,9 @@ import com.techelevator.dao.ReviewDAO;
 import com.techelevator.model.Review;
 import com.techelevator.model.ReviewDto;
 
-@RestController
 @CrossOrigin
+@RestController
+
 public class ReviewController {
 	
 	private ReviewDAO reviewDAO;
