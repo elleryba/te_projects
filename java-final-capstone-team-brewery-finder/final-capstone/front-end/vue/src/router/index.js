@@ -87,7 +87,7 @@ const router = new Router({
         }
       },
     { 
-        path: '/update/:id',
+        path: '/update/:id/:name',
         name: 'updateBrewery',
         component: UpdateBrewery,
         beforeEnter: (to, from, next) => {

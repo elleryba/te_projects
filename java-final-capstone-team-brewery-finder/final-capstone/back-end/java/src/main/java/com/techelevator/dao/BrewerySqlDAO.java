@@ -10,25 +10,20 @@ import org.springframework.stereotype.Service;
 import com.techelevator.model.Brewery;
 import com.techelevator.model.BreweryDTO;
 
-
 @Service
 public class BrewerySqlDAO implements BreweryDAO {
-	
+
 	private JdbcTemplate jdbcTemplate;
-	
+
 	public BrewerySqlDAO(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
-	
-	
+
 	@Override
 	public void addBrewery(BreweryDTO breweryDTO) {
-		
-		
 		String addBrewSql = "INSERT INTO breweries (brewery_name, history, open_from, open_to, days_open, address) VALUES (?,?,?,?,?,?) ";
 	
 		jdbcTemplate.update(addBrewSql, breweryDTO.getName(), breweryDTO.getHistory(), breweryDTO.getOpenFrom(), breweryDTO.getOpenTo(), breweryDTO.getDaysOpen(), breweryDTO.getAddress());
-		
 	}
 	
 	@Override
@@ -36,7 +31,7 @@ public class BrewerySqlDAO implements BreweryDAO {
 		
 		Brewery aBrew = new Brewery();
 		
-		String getBrewSql = "SELECT * FROM breweries WHERE name = ?";
+		String getBrewSql = "SELECT * FROM breweries WHERE id = ?";
 		SqlRowSet result = jdbcTemplate.queryForRowSet(getBrewSql, breweryDTO.getName());
 		
 		while(result.next()) {
@@ -48,7 +43,7 @@ public class BrewerySqlDAO implements BreweryDAO {
 	}
 	
 	@Override
-	public void updateBrewery(Long id,BreweryDTO breweryDTO) {
+	public void updateBrewery(Long id, String brewery_name, BreweryDTO breweryDTO) {
 		
 		String updateBrewery = "UPDATE breweries SET brewery_name = ?, "
 												+ "  history = ?, "
@@ -61,8 +56,6 @@ public class BrewerySqlDAO implements BreweryDAO {
 		jdbcTemplate.update(updateBrewery, breweryDTO.getName(), breweryDTO.getHistory(), breweryDTO.getOpenFrom(), breweryDTO.getOpenTo(), breweryDTO.getDaysOpen(), breweryDTO.getAddress(), id);
 				
 	}
-	
-	// this is for a commit
 	
 	@Override public List<Brewery> getAllBreweries() {
 		

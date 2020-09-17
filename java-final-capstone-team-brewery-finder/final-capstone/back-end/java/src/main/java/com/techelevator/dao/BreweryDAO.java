@@ -10,7 +10,7 @@ public interface BreweryDAO  {
 	// Add Brewery / POST
 	// Update Brewery / PUT
 	// Delete Brewery / DELETE
-	// Find Brewery by id / SELECT
+	// Find Brewery by ID / SELECT
 	// Find Brewery by name / SELECT
 	
 	public void addBrewery(BreweryDTO breweryDTO); 
@@ -19,6 +19,6 @@ public interface BreweryDAO  {
 	
 	public Brewery getBreweryByName(BreweryDTO breweryDTO);
 	
-	public void updateBrewery(Long id,BreweryDTO breweryDTO);
+	public void updateBrewery(Long id, String brewery_name, BreweryDTO breweryDTO);
 
 }

@@ -26,7 +26,7 @@ export default new Vuex.Store({
     reviews: [],
     reviewDtos: [],
 
-    activeBrewery:{  // might need 
+    activeBrewery:{
       brewery_name: "",
       history: "",
       open_from: "",

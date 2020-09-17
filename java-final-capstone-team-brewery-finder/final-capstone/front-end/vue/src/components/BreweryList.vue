@@ -24,7 +24,7 @@
           <div class="viewbeers">
             <router-link :to="{ name: 'beerList', params: {name: brewery.name}}">View Beers</router-link>
             <li>
-              <router-link :to="{ name: 'updateBrewery', params: {id: brewery.id}}">Update Brewery</router-link>
+              <router-link :to="{ name: 'updateBrewery', params: {id: brewery.id, name: brewery.name}}">Update Brewery</router-link>
             </li>
           </div>
         </div>
@@ -98,10 +98,6 @@ export default {
         });
     },
   }, //end of methods
-  //methods: {
-  // addBrewery(){},// added cuz i assume well need unless we want to make a seperate component
-
-  //}
 }; // end of export default
 </script>
 

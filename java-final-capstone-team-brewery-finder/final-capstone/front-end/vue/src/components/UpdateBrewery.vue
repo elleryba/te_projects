@@ -1,5 +1,4 @@
 <template>
-  <!--didnt add anything other than a div so it would not have red squiggles-->
   <div class="update-brewery">
     <h1 class="headline">Update Brewery</h1>
     <div class="body">
@@ -26,7 +25,7 @@
           <input id="daysOpen" type="text" v-model="daysOpen" />
         </div>
         <div class="form-element">
-          <label for="history">History:</label>
+          <label for="history">Description:</label>
           <input id="history" type="text" v-model="history" />
         </div>
       </form>
@@ -46,7 +45,7 @@ export default {
   props: ["id"],
   data() {
     return {
-      name: "",
+      name: this.$route.params.name,
       history: "",
       openFrom: "",
       openTo: "",
@@ -68,9 +67,9 @@ export default {
       breweryService
         .updateBrewery(this.$route.params.id, brewery)
         .then((response) => {
-          this.$store.commit("UPDATE_BREW", brewery); // readding brewery with updated info
+          this.$store.commit("UPDATE_BREW", brewery);
 
-          this.name = response.data.name; // 68-73 Why you do dis reset form thang
+          this.name = response.data.name;
           this.history = response.data.history;
           this.openFrom = response.data.openFrom;
           this.openTo = response.data.openTo;
@@ -83,16 +82,13 @@ export default {
         });
     },
     resetForm() {
-      // i added
       this.newReview = {}; // reset brewery object to empty
       this.$router.push({ name: "home" }); //return user to homepage
     },
   },
-  /* created() {
-        breweryService
-      .getBreweryByName(this.name)
-      
-      } */
+  //created() {
+    //breweryService.getBreweryByName(this.name);
+  //},
 };
 </script>
 <style scoped>
