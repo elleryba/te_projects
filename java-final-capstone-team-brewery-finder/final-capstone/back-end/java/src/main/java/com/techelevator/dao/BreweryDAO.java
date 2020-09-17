@@ -17,7 +17,7 @@ public interface BreweryDAO  {
 
 	public List<Brewery> getAllBreweries();
 	
-	public Brewery getBreweryByName(BreweryDTO breweryDTO);
+	public Brewery getBreweryByName(String name);
 	
 	public void updateBrewery(Long id, String brewery_name, BreweryDTO breweryDTO);
 

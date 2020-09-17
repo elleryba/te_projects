@@ -38,13 +38,13 @@ public class BreweryController {
 	}
 	
 	@RequestMapping(value = "/get", method = RequestMethod.GET)
-	public Brewery getBrewery(@RequestBody BreweryDTO breweryDTO) {
-		return breweryDAO.getBreweryByName(breweryDTO);
+	public Brewery getBrewery(@RequestBody String brewery_name) {
+		return breweryDAO.getBreweryByName(brewery_name);
 	}
 	
 	@RequestMapping(value = "/update/{id}/{name}", method = RequestMethod.PUT)
-	public void updateBrewery(@RequestBody BreweryDTO breweryDTO, @PathVariable Long id, @PathVariable String brewery_name) {
-		breweryDAO.updateBrewery(id, brewery_name, breweryDTO);
+	public void updateBrewery(@RequestBody BreweryDTO breweryDTO, @PathVariable Long id, @PathVariable String name) {
+		breweryDAO.updateBrewery(id, name, breweryDTO);
 	}
 
 }

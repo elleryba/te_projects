@@ -27,12 +27,12 @@ public class BrewerySqlDAO implements BreweryDAO {
 	}
 	
 	@Override
-	public Brewery getBreweryByName(BreweryDTO breweryDTO) {
+	public Brewery getBreweryByName(String name) {
 		
 		Brewery aBrew = new Brewery();
 		
-		String getBrewSql = "SELECT * FROM breweries WHERE id = ?";
-		SqlRowSet result = jdbcTemplate.queryForRowSet(getBrewSql, breweryDTO.getName());
+		String getBrewSql = "SELECT * FROM breweries WHERE brewery_name = ?";
+		SqlRowSet result = jdbcTemplate.queryForRowSet(getBrewSql, name);
 		
 		while(result.next()) {
 			aBrew = MapRowToBrewery(result);
