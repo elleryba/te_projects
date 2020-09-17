@@ -5,7 +5,6 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import store from '../store/index'
-//added this 
 import AddBrewery from '../views/AddBrewery.vue'
 import UpdateBrewery from '../views/UpdateBrewery.vue'
 import BeerList from '../views/BeerList.vue'
@@ -14,7 +13,6 @@ import DeleteBeer from '../views/DeleteBeer.vue'
 import BeerReview from '../views/BeerReview.vue'
 import ReviewList from '../views/ReviewList.vue'
 import WorldBreweries from '../components/WorldBreweries.vue'
-//end of added 
 Vue.use(Router)
 
 /**
@@ -30,9 +28,6 @@ const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
-
-    // this route path is temporary for testing
-
     {
       path: '/',
       name: 'route',
@@ -41,13 +36,12 @@ const router = new Router({
         requiresAuth: false
       }
     },
-
     {
       path: '/home',
       name: 'home',
       component: Home,
       meta: {
-        requiresAuth: true // changed to false for testing 
+        requiresAuth: true
       }
     },
     {
@@ -84,6 +78,7 @@ const router = new Router({
               next()
             }
             else {
+              console.log('Access Denied');
               next(from)
             }
           },

@@ -4,6 +4,8 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Shadows+Into+Light&display=swap"
       rel="stylesheet"
     />
+    <h1 class="headline">Add New Brewery</h1>
+    <div class="body">
     <form v-if="showForm === true" v-on:submit.prevent="createBrewery">
       <!--start of form elements -->
       <div class="form-element">
@@ -30,12 +32,13 @@
         <label for="history">History:</label>
         <input id="history" type="text" v-model="brewery.history" />
       </div>
+      </form>
+    </div>
       <!--end of form elements -->
-
+      <div class="nav">
       <button class="navbtn" v-on:submit.prevent="createBrewery">Submit</button>
-
       <button class="navbtn" v-on:click.prevent="resetForm" type="cancel">Cancel</button>
-    </form>
+      </div>
   </div>
 </template>
 <script>
@@ -86,15 +89,43 @@ export default {
     width: 100%;
   clear: both;
 }
-.navbtn {
-  background-color:black;
+.create-brewery {
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  grid-gap: 20px 50px;
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+  grid-template-areas:
+    ". headline headline ."
+    ". body body ."
+    ". nav nav .";
+  align-items: center;
+}
+button {
+  grid-area: back;
+  background-color: rgb(74, 178, 226);
   line-height: 20px;
-  width: 10%;
   border-radius: 5px;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  margin: 10px;
-  color:white;
+  margin: auto;
+  color: white;
+  cursor: pointer;
+  align-items: center;
+}
+h1.headline {
+  grid-area: headline;
+  align-items: center;
+  margin: auto;
+}
+.body {
+  grid-area: body;
+  align-items: center;
+  margin: auto;
+}
+.nav {
+  grid-area: nav;
+  align-items: center;
+  margin: auto;
 }
 </style>
