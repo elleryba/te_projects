@@ -1,7 +1,11 @@
 <template>
   <div class="create-beer">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Shadows+Into+Light&display=swap" rel="stylesheet">
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+    <h1 class="headline">Add New Beer</h1>
+    <div class="body">
     <form v-on:submit.prevent="createBeer">
       <!--start of form elements -->
       <div class="form-element">
@@ -28,13 +32,13 @@
         <label for="breweryName">Brewery Name:</label>
         <input id="breweryName" type="text" v-model="beerDto.breweryName" />
       </div>
-
-      <!--end of form elements -->
-
-      <button class="navbtn" v-on:submit.prevent="createBeer">Submit</button>
-
-      <button class="navbtn" v-on:click.prevent="resetForm" type="cancel">Cancel</button>
     </form>
+    </div>
+    <!--end of form elements -->
+    <div class="nav">
+      <button class="navbtn" v-on:submit.prevent="createBeer">Submit</button>
+      <button class="navbtn" v-on:click.prevent="resetForm" type="cancel">Cancel</button>
+    </div>
   </div>
 </template>
 
@@ -68,30 +72,58 @@ export default {
     resetForm() {
       this.beerDto = {};
       this.$router.push({ name: "home" });
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
-.form-element{
-  font-family: 'Open Sans', sans-serif;
-    width: 300px;
+.form-element {
+  font-family: "Open Sans", sans-serif;
+  width: 300px;
   clear: both;
 }
-.form-element input{
-    width: 100%;
+.form-element input {
+  width: 100%;
   clear: both;
 }
-.navbtn {
-  background-color:black;
+button {
+  grid-area: back;
+  background-color: rgb(74, 178, 226);
   line-height: 20px;
-  width: 10%;
   border-radius: 5px;
   text-transform: uppercase;
   text-decoration: none;
   text-align: center;
-  margin: 10px;
+  margin: auto;
   color: white;
+  cursor: pointer;
+  align-items: center;
+}
+.create-beer {
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  grid-gap: 20px 50px;
+  grid-template-columns: 1fr, 1fr, 1fr, 1fr;
+  grid-template-areas:
+    ". headline headline ."
+    ". body body ."
+    ". nav nav .";
+  align-items: center;
+}
+h1.headline {
+  grid-area: headline;
+  align-items: center;
+  margin: auto;
+}
+.body {
+  grid-area: body;
+  align-items: center;
+  margin: auto;
+}
+.nav {
+  grid-area: nav;
+  align-items: center;
+  margin: auto;
 }
 </style>

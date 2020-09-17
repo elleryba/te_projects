@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Add New Beer</h1>
     <create-beer />
   </div>
 </template>
