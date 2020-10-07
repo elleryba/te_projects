@@ -274,7 +274,13 @@ public class Exercises {
 	 sortaSum(10, 11) → 21
 	 */
 	public int sortaSum(int a, int b) {
-		return 0;
+		int sum = 0;
+		
+		sum = a + b;
+		if(sum < 10 || sum > 19) {
+			return sum;
+		}
+		else return 20;
 	}
 
 	/*
@@ -346,7 +352,7 @@ public class Exercises {
 	 old35(15) → false
 	 */
 	public boolean old35(int n) {
-		return (n % 3 == 0) ^ (n % 5 ==0);
+		return (n % 3 == 0) ^ (n % 5 == 0);
 	}
 
 	/*
@@ -358,7 +364,7 @@ public class Exercises {
 	 less20(20) → false
 	 */
 	public boolean less20(int n) {
-		return false;
+		return (n + 1) % 20 == 0 || (n + 2) % 20 == 0;
 	}
 
 	/*
@@ -369,7 +375,7 @@ public class Exercises {
 	 nearTen(19) → true
 	 */
 	public boolean nearTen(int num) {
-		return false;
+		return (num - 1) % 10 == 0 || (num + 1) % 10 == 0 || (num - 2) % 10 == 0 || (num + 2) % 10 == 0 || num % 10 == 0;
 	}
 
 	/*
@@ -380,7 +386,10 @@ public class Exercises {
 	 teenSum(13, 2) → 19
 	 */
 	public int teenSum(int a, int b) {
-		return 0;
+		if((a > 12 && a < 20) || (b > 12 && b < 20)) {
+			return 19;
+		}
+		else return a + b;
 	}
 
 	/*
@@ -391,7 +400,10 @@ public class Exercises {
 	 answerCell(true, false, false) → false
 	 */
 	public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
-		return false;
+		if(isAsleep || (isMorning && !isMom)) {
+			return false;
+		}
+		else return true;
 	}
 
 	/*
@@ -404,6 +416,19 @@ public class Exercises {
 	 teaParty(20, 6) → 2
 	 */
 	public int teaParty(int tea, int candy) {
+		int bad = 0;
+		int good = 1;
+		int great = 2;
+		
+		if(tea < 5 || candy < 5) {
+			return bad;
+		}
+		else if(tea >= 5 && candy >=5) {
+			if(tea <= candy/2 || candy <= tea/2) {
+				return great;
+			}
+			else return good;
+		}
 		return 0;
 	}
 
@@ -414,7 +439,7 @@ public class Exercises {
 	 twoAsOne(3, 2, 2) → false
 	 */
 	public boolean twoAsOne(int a, int b, int c) {
-		return false;
+		return a + b == c || a + c == b || b + c == a;
 	}
 
 	/*
@@ -425,7 +450,7 @@ public class Exercises {
 	 inOrder(1, 1, 2, true) → true
 	 */
 	public boolean inOrder(int a, int b, int c, boolean bOk) {
-		return false;
+		return !bOk && b > a && c > b || bOk && c > b;
 	}
 
 	/*
@@ -437,7 +462,7 @@ public class Exercises {
 	 inOrderEqual(5, 5, 7, true) → true
 	 */
 	public boolean inOrderEqual(int a, int b, int c, boolean equalOk) {
-		return false;
+		return !equalOk && a < b && b < c || equalOk && a <= b && b <= c;
 	}
 
 	/*
@@ -448,7 +473,24 @@ public class Exercises {
 	 loneSum(3, 3, 3) → 0
 	 */
 	public int loneSum(int a, int b, int c) {
-		return 0;
+		int sum = 0;
+		
+		if(a != b && a != c && b != c) {
+			sum = a+b+c;
+		}
+		else if(a == b && a != c) {
+			sum = c;
+		}
+		else if(a == c && a != b) {
+			sum = b;
+		}
+		else if(b == c && a != b) {
+			sum = a;
+		}
+		else if(a == b && b == c && a == c) {
+			return 0;
+		}
+		return sum;
 	}
 
 	/*
@@ -462,7 +504,23 @@ public class Exercises {
 	 luckySum(13, 13, 3) → 0
 	 */
 	public int luckySum(int a, int b, int c) {
-		return 0;
+		int sum = 0;
+		
+		if(a != 13 && b != 13 && c != 13) {
+			return a + b + c;
+		}
+		else if(a == 13 && b != 13 && c != 13) {
+			return c;
+		}
+		else if(a != 13 && b == 13) {
+			return a;
+		}
+		else if(a != 13 && b != 13 && c == 13) {
+			return a + b;
+		}
+		else if(a == 13 && b == 13) {
+			sum = 0;
+		}
+		return sum;
 	}
-
 }
