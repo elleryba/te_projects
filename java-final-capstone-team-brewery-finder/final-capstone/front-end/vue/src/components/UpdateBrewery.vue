@@ -94,7 +94,13 @@ export default {
       breweryService.getBreweryByName(this.$route.params.name)
       .then((response) => {
         this.$store.commit("SET_ACTIVE_BREWERY", response.data);
-        this.activeBrewery = response.data;
+        this.activeBrewery.id = response.data.id;
+        this.activeBrewery.name = response.data.name;
+        this.activeBrewery.history = response.data.history;
+        this.activeBrewery.openFrom = response.data.openFrom;
+        this.activeBrewery.openTo = response.data.openTo;
+        this.activeBrewery.daysOpen = response.data.daysOpen;
+        this.activeBrewery.address = response.data.address;
       })
     },
     resetForm() {

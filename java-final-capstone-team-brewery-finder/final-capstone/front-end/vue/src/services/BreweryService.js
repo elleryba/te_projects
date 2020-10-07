@@ -20,6 +20,6 @@ export default {
         return http.delete(``, breweryId)
     },
     getBreweryByName(name){ 
-        return http.get(`/get`, name)
+        return http.get(`/get/${name}`, name)
     }
 }
