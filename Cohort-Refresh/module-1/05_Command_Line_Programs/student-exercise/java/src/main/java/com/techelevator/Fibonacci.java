@@ -17,13 +17,11 @@ public class Fibonacci {
 		try {
 			userNum = Integer.parseInt(userResponse);
 			
-			while (sum < userNum) {
-				for (int i = 0; i < userNum; i++) {
+			while (x1 <= userNum) {
 					System.out.println(x1);
 					sum = x1 + x2;
 					x1 = x2;
 					x2 = sum;
-				}
 			}
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
