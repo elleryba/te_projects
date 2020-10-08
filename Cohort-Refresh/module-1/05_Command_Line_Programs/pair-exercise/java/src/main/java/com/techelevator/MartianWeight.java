@@ -1,5 +1,9 @@
 package com.techelevator;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /*
  In case you've ever pondered how much you weight on Mars, here's the calculation:
  	Wm = We * 0.378
@@ -19,7 +23,27 @@ Enter a series of Earth weights (space-separated): 98 235 185
 public class MartianWeight {
 
 	public static void main(String[] args) {
+		Scanner userInput = new Scanner(System.in);
+		List<Integer> weightList = new ArrayList<Integer>();
 
+		System.out.print("Enter a seres of Earth weights, separated by spaces: ");
+		String userResponse = userInput.nextLine();
+
+		try {
+			String[] userWeights = userResponse.split(" ");
+			for (String s : userWeights) {
+				weightList.add(Integer.parseInt(s));
+			}
+			for (int i : weightList) {
+				int marsW = (int) (i * 0.378);
+				System.out.println(i + "lbs on Earth is " + marsW + "lbs on Mars.");
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			System.out.println("Invalid entry! Try again.");
+			System.exit(0);
+		} finally {
+			userInput.close();
+		}
 	}
-
 }
