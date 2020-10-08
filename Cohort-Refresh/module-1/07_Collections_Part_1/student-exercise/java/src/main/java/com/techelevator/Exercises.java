@@ -22,7 +22,13 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"]
 	 */
 	public List<String> array2List(String[] stringArray) {
-		return null;
+		List<String> strings = new ArrayList<String>();
+		
+		for(String s : stringArray) {
+			strings.add(s);
+		}
+		
+		return strings;
 	}
 
 	/*
@@ -32,7 +38,13 @@ public class Exercises {
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
-		return null;
+		String[] strings = new String[stringList.size()];
+		
+		for(int i = 0; i < strings.length; i++) {
+			strings[i] = stringList.get(i);
+		}
+		
+		return strings;
 	}
 
 	/*
@@ -43,7 +55,14 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+		List<String> strings = new ArrayList<String>();
+		
+		for(String s : stringArray) {
+			if(s.length() < 4 || s.length() > 4) {
+				strings.add(s);
+			}
+		}
+		return strings;
 	}
 
 	/*
@@ -55,7 +74,14 @@ public class Exercises {
 		-> ["way", "the", "all", "jingle", "bells", "jingle", "bells", "jingle"]
 	 */
 	public List<String> reverseList(List<String> stringList) {
-		return null;
+		List<String> reverse = new ArrayList<String>();
+		int len = stringList.size()-1;
+		System.out.println(stringList);
+		for(int i = len; len > 0; len--) {
+			reverse.add(stringList.get(i));
+		}
+		System.out.println(reverse);
+		return reverse;
 	}
 
 	/*
