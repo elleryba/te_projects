@@ -76,11 +76,9 @@ public class Exercises {
 	public List<String> reverseList(List<String> stringList) {
 		List<String> reverse = new ArrayList<String>();
 		int len = stringList.size()-1;
-		System.out.println(stringList);
 		for(int i = len; len > 0; len--) {
 			reverse.add(stringList.get(i));
 		}
-		System.out.println(reverse);
 		return reverse;
 	}
 
@@ -91,7 +89,12 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+		List<Double> divided = new ArrayList<Double>();
+		
+		for(int i : intArray) {
+			divided.add(((double) i/2));
+		}
+		return divided;
 	}
 
 	/*
@@ -101,7 +104,14 @@ public class Exercises {
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
 	 */
 	public Integer findLargest(List<Integer> integerList) {
-		return null;
+		int big = 0;
+		
+		for(int i : integerList) {
+			if(i > big) {
+				big = i;
+			}
+		}
+		return big;
 	}
 
 	/*
@@ -111,7 +121,14 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
+		List<Integer> odds = new ArrayList<Integer>();
+		
+		for(int i : integerArray) {
+			if(i % 2 != 0) {
+				odds.add(i);
+			}
+		}
+		return odds;
 	}
 
 	/*
@@ -122,7 +139,14 @@ public class Exercises {
 	 foundIntTwice( [9, 23, 44, 2, 88, 44], 44) -> true
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
-		return false;
+		int count = 0;
+		
+		for(int i : integerList) {
+			if(i == intToFind) {
+				count++;
+			}
+		}
+		return count >= 2;
 	}
 
 	/*
@@ -139,7 +163,21 @@ public class Exercises {
 	 equals "1")
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		return null;
+		List<String> fizzy = new ArrayList<String>();
+		
+		for(int i : integerArray) {
+			if(i % 3 == 0 && i % 5 == 0) {
+				fizzy.add("FizzBuzz");
+			}
+			else if(i % 3 == 0) {
+				fizzy.add("Fizz");
+			}
+			else if(i % 5 == 0) {
+				fizzy.add("Buzz");
+			}
+			else fizzy.add(Integer.toString(i));
+		}
+		return fizzy;
 	}
 
 	/*
@@ -150,7 +188,39 @@ public class Exercises {
 	 interleaveLists( [1, 2, 3], [4, 5, 6] )  ->  [1, 4, 2, 5, 3, 6]
 	 */
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
-		return null;
+		List<Integer> listy = new ArrayList<Integer>();
+		int small = 100;
+		int diff = 0;
+		System.out.println("List one: " + listOne);
+		System.out.println("List two: " + listTwo);
+		
+		if(listOne.size() < small) {
+			small = listOne.size();
+		}
+		if(listTwo.size() < small) {
+			small = listTwo.size();
+		}
+		
+		for(int i = 0; i < small; i++) {
+			listy.add(listOne.get(i));
+			listy.add(listTwo.get(i));
+		}
+		
+//		if(listOne.size() > listTwo.size()) {
+//			diff = listOne.size() - listTwo.size();
+//			for(int i = diff; i < listOne.size(); i++) {
+//				listy.add(listOne.get(i));
+//			}
+//		}
+//		else if(listTwo.size() > listOne.size()) {
+//			diff = listTwo.size() - listOne.size();
+//			for(int i = diff; i < listTwo.size(); i++) {
+//				listy.add(listTwo.get(i));
+//			}
+//		}
+
+		System.out.println("Return list: " + listy);
+		return listy;
 	}
 
 	/*
