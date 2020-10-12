@@ -1,5 +1,6 @@
 package com.techelevator;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -35,7 +36,26 @@ public class Exercises {
 	 *
 	 */
 	public String animalGroupName(String animalName) {
-		return null;
+		Map<String, String> mappy = new HashMap<String, String>();
+		
+		mappy.put("rhino", "Crash");
+		mappy.put("giraffe", "Tower");
+		mappy.put("elephant", "Herd");
+		mappy.put("lion", "Pride");
+		mappy.put("crow", "Murder");
+		mappy.put("pigeon", "Kit");
+		mappy.put("flamingo", "Pat");
+		mappy.put("deer", "Herd");
+		mappy.put("dog", "Pack");
+		mappy.put("crocodile", "Float");
+		
+		if(mappy.containsKey(animalName.toLowerCase())) {
+			return mappy.get(animalName.toLowerCase());
+		}
+		else if(!mappy.containsKey(animalName.toLowerCase())) {
+			return "unknown";
+		}
+		else return "";
 	}
 
 	/*
@@ -61,7 +81,19 @@ public class Exercises {
 	 *
 	 */
 	public Double isItOnSale(String itemNumber) {
-		return null;
+		Map<String, Double> mappy = new HashMap<String, Double>();
+		
+		mappy.put("KITCHEN4001", 0.20);
+		mappy.put("GARAGE1070", 0.15);
+		mappy.put("LIVINGROOM", 0.10);
+		mappy.put("KITCHEN6073", 0.40);
+		mappy.put("BEDROOM3434", 0.60);
+		mappy.put("BATH0073", 0.15);
+		
+		if(mappy.containsKey(itemNumber.toUpperCase())) {
+			return mappy.get(itemNumber.toUpperCase());
+		}
+		else return 0.00;
 	}
 
 	/*
@@ -75,7 +107,15 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
-		return null;
+		int petMon = peterPaul.get("Peter");
+		int paMon = peterPaul.get("Paul");
+		
+		if(petMon > 0 && paMon < 1000) {
+			int toPaul = petMon /2;
+			peterPaul.put("Paul", toPaul + paMon);
+			peterPaul.put("Peter", petMon - toPaul);
+		}
+		return peterPaul;
 	}
 
     /*
