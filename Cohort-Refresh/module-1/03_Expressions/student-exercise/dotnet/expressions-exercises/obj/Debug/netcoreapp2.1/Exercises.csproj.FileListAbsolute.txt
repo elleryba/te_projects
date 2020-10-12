@@ -1,0 +1,12 @@
+C:\Users\ellea\workspace\te_projects\Cohort-Refresh\module-1\03_Expressions\student-exercise\dotnet\expressions-exercises\bin\Debug\netcoreapp2.1\Exercises.deps.json
+C:\Users\ellea\workspace\te_projects\Cohort-Refresh\module-1\03_Expressions\student-exercise\dotnet\expressions-exercises\bin\Debug\netcoreapp2.1\Exercises.runtimeconfig.json
+C:\Users\ellea\workspace\te_projects\Cohort-Refresh\module-1\03_Expressions\student-exercise\dotnet\expressions-exercises\bin\Debug\netcoreapp2.1\Exercises.runtimeconfig.dev.json
+C:\Users\ellea\workspace\te_projects\Cohort-Refresh\module-1\03_Expressions\student-exercise\dotnet\expressions-exercises\bin\Debug\netcoreapp2.1\Exercises.dll
+C:\Users\ellea\workspace\te_projects\Cohort-Refresh\module-1\03_Expressions\student-exercise\dotnet\expressions-exercises\bin\Debug\netcoreapp2.1\Exercises.pdb
+C:\Users\ellea\workspace\te_projects\Cohort-Refresh\module-1\03_Expressions\student-exercise\dotnet\expressions-exercises\obj\Debug\netcoreapp2.1\Exercises.csprojAssemblyReference.cache
+C:\Users\ellea\workspace\te_projects\Cohort-Refresh\module-1\03_Expressions\student-exercise\dotnet\expressions-exercises\obj\Debug\netcoreapp2.1\Exercises.AssemblyInfoInputs.cache
+C:\Users\ellea\workspace\te_projects\Cohort-Refresh\module-1\03_Expressions\student-exercise\dotnet\expressions-exercises\obj\Debug\netcoreapp2.1\Exercises.AssemblyInfo.cs
+C:\Users\ellea\workspace\te_projects\Cohort-Refresh\module-1\03_Expressions\student-exercise\dotnet\expressions-exercises\obj\Debug\netcoreapp2.1\Exercises.csproj.CoreCompileInputs.cache
+C:\Users\ellea\workspace\te_projects\Cohort-Refresh\module-1\03_Expressions\student-exercise\dotnet\expressions-exercises\obj\Debug\netcoreapp2.1\Exercises.dll
+C:\Users\ellea\workspace\te_projects\Cohort-Refresh\module-1\03_Expressions\student-exercise\dotnet\expressions-exercises\obj\Debug\netcoreapp2.1\Exercises.pdb
+C:\Users\ellea\workspace\te_projects\Cohort-Refresh\module-1\03_Expressions\student-exercise\dotnet\expressions-exercises\obj\Debug\netcoreapp2.1\Exercises.genruntimeconfig.cache

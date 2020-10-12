@@ -33,6 +33,10 @@ namespace VariableNaming
             many raccoons are left in the woods?
             */
 
+            int numberOfRaccoons = 3;
+            int raccoonsThatLeft = 2;
+            int numberOfRaccoonsLeft = numberOfRaccoons - raccoonsThatLeft;
+
             /*
             4. There are 5 flowers and 3 bees. How many less bees than flowers?
             */
