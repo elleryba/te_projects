@@ -19,6 +19,9 @@
  * @param {boolean} [recommendation=false] does the student have a recommendation
  * @returns {boolean} true if they are admitted
  */
+function isAdmitted (gpa, satScore=0, recommendation=false){
+    return gpa > 4.0 || satScore > 1300 || gpa > 3.0 && recommendation || satScore > 1200 && recommendation;
+}
 
 /**
  * Write a function called useParameterToFilterArray that takes an anonymous
@@ -28,6 +31,10 @@
  * @returns {number[]} the filtered array
  */
 let unfilteredArray = [1, 2, 3, 4, 5, 6];
+
+function useParameterToFilterArray (filterFunction){
+    return unfilteredArray.filter(filterFunction);
+}
 
 /**
  * Write a function called makeNumber that takes two strings
@@ -42,6 +49,11 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @returns {number} the resultant number
  */
 
+ function makeNumber (first, second=''){
+     let number = first + second;
+     return parseInt(number);
+ }
+
 /**
  * Write a function called addAll that takes an unknown number of parameters
  * and adds all of them together. Return the sum.
@@ -50,11 +62,23 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @returns {number} the sum of all the parameters (or arguments)
  */
 
+ function addAll (){
+    return Array.from(arguments).reduce((sum, number) => {
+        return sum + number;
+      }, 0);
+ }
+
 /*
  * Write and document a function called makeHappy that takes
  * an array and prepends 'Happy ' to the beginning of all the
  * words and returns them as a new array. Use the `map` function.
  */
+
+ function makeHappy (words){
+    return words.map((word) => {
+        return 'Happy ' + word;
+      });
+ }
 
 /*
  * Write and document a function called getFullAddressesOfProperties
